@@ -37,13 +37,11 @@
     5. Building and testing with a couple classes to a component:
 
         5.1:
-            export default function App() {
-                return (
+           
                     <h1 className="text-3xl font-bold underline">
                     Hello world!
                     </h1>
-                )
-            }
+   
 
     6. DaisyUI:
 
@@ -51,8 +49,16 @@
 
         - Go to tailwind.config.js and:
 
-            module.exports = {
-                //...
-                plugins: [require("daisyui")],
-            }
     
+                plugins: [require("daisyui")],
+            
+
+    
+        - Go to tailwind.config.js and:
+           
+           
+                daisyui:
+                    themes: ["business", "dark", "forest", "lofi", "synthwave", "retro", "cyberpunk", "halloween", "valentine", "garden", "christmas"],
+            
+
+Now just test some DaisyUI classes and you should be good to go!
