@@ -1,25 +1,53 @@
-import React from 'react'
-import imageCard from '../assets/learns.jpg'
+// Carousel.jsx
 
+import React from 'react';
+import Slider from 'react-slick';
 
-function Carousel( {images}) {
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+function Carousel({ images }) {
+  const settings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
+  };
+
+  function handlePreviousSlide() {
+    sliderRef.slickPrev();
+  }
+
+  function handleNextSlide() {
+    sliderRef.slickNext();
+  }
+
+  let sliderRef;
+
+  function CustomPrevArrow() {
+    return (
+      <button onClick={handlePreviousSlide} className="absolute top-1/2 left-4 -translate-y-1/4 btn btn-circle z-10 focus:outline-none">❮</button>
+    );
+  }
+
+  function CustomNextArrow() {
+    return (
+      <button onClick={handleNextSlide} className="absolute top-1/2 right-4 -translate-y-1/4 btn btn-circle z-10 focus:outline-none">❯</button>
+    );
+  }
+
   return (
-    <>
-    
-    <div className="carousel w-full">
+    <div className="relative">
+      <Slider {...settings} ref={(slider) => (sliderRef = slider)}>
         {images.map((image, index) => (
-          <div key={index} id={`slide${index + 1}`} className="carousel-item relative w-full">
-            <img src={image} className="w-full" alt={`Image ${index}`} />
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href={`#slide${index === 0 ? images.length : index}`} className="btn btn-circle">❮</a>
-              <a href={`#slide${index === images.length - 1 ? 1 : index + 2}`} className="btn btn-circle">❯</a>
-            </div>
+          <div key={index}>
+            <img src={image} alt={`Image ${index}`} />
           </div>
         ))}
-      </div>
-    
-    </>
-  )
+      </Slider>
+    </div>
+  );
 }
 
-export default Carousel
+export default Carousel;

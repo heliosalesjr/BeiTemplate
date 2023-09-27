@@ -29,8 +29,8 @@ function App() {
         
         <Collapse />
         <Carousel images={images}/>
-        <div className="flex flex-col items-center md:flex-row md:justify-center md:space-x-5 space-y-5">
-        <Cardy /><Cardy /> <Cardy />
+        <div className="flex flex-col items-center px-20 md:flex-row md:justify-center md:space-x-5 space-y-5">
+          <Cardy/><Cardy/><Cardy/>
         </div>
         <Footer />
     </>
