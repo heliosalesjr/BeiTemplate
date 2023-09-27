@@ -9,7 +9,7 @@ export default {
          },
          plugins: [require("daisyui")],
           daisyui: {
-            themes: ["halloween", "valentine", "garden", "christmas"],
+            themes: ["acid", "valentine", "garden", "christmas"],
           }
 }
 
