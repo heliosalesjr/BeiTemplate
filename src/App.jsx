@@ -13,28 +13,27 @@ import doguin from './assets/doguin.png'
 import howmuch from './assets/howmuch.png'
 import postit from './assets/postit.png'
 import teachs from './assets/teachs.png'
+import { Fade } from "react-awesome-reveal";
+
 
 function App() {
 
-  const images = [books, doguin, howmuch, postit, teachs];
-
   return (
-
-
     <>
-        <NavbarDark />
-        <Hero />
+      <NavbarDark />
+      <Hero />
+      
         <Accordion />
         <ChatBubble />
-        
         <Collapse />
-        <Carousel images={images}/>
+        <Carousel /> {/* Renderize o componente Carousel aqui */}
         <div className="flex flex-col items-center px-20 md:flex-row md:justify-center md:space-x-5 space-y-5">
-          <Cardy/><Cardy/><Cardy/>
+          <Cardy /><Cardy /><Cardy />
         </div>
-        <Footer />
+      
+      <Footer />
     </>
   )
 }
 
-export default App
+export default App;
