@@ -1,5 +1,5 @@
 import React from 'react'
-import NavbarDark from './components/Nav'
+import NavbarDark from './components/NavbarDark'
 import Hero from './components/Hero'
 import FAQ from './components/FAQ'
 import ChatBubble from './components/ChatBubble'
@@ -15,6 +15,7 @@ function App() {
 
   return (
     <>
+      
       <NavbarDark />
       <Hero />
       <Fade>
@@ -29,6 +30,7 @@ function App() {
         
       
       <Footer />
+
     </>
   )
 }
