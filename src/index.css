@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.transition-height {
+  transition-property: height;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  overflow: hidden;
+}
+
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-96 {
+  max-height: 24rem; /* Ajuste conforme necessário */
+}
